@@ -57,7 +57,8 @@ async function drawScatter() {
   // Draw data
   let dots = bounds.selectAll("circle")
       .data(dataset)
-    .enter().append("circle")
+      
+  dots.join("circle")
       .attr("cx", d => xScale(xAccessor(d)))
       .attr("cy", d => yScale(yAccessor(d)))
       .attr("r", 5)
